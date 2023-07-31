@@ -67,7 +67,7 @@ export class ContactComponent implements OnInit {
     Preferred Time to Contact: ${formattedTime}`;
 
     // Replace '9876543210' with the real estate agent's WhatsApp number
-    const whatsappUrl = `https://wa.me/7019762947?text=${encodeURIComponent(
+    const whatsappUrl = `https://wa.me/9876543210?text=${encodeURIComponent(
       message
     )}`;
 
