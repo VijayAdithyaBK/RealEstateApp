@@ -1,0 +1,59 @@
+/* requirements.component.css */
+.center-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.requirements-container {
+  max-width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.mat-error {
+  visibility: hidden;
+  position: absolute;
+  top: -20px; /* Adjust the position to be above the input */
+  left: 0;
+  color: red;
+  font-size: 12px;
+}
+
+.form-group.mat-invalid .mat-error {
+  visibility: visible;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

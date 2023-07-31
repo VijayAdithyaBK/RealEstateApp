@@ -1,0 +1,81 @@
+<!-- requirements.component.html -->
+<div class="center-container">
+  <div class="requirements-container">
+    <h2>What are you looking for today?</h2>
+    <form (ngSubmit)="onSubmit()" #requirementsForm="ngForm">
+      <div class="form-group">
+        <label for="plotDimensions">Plot Size Range:</label>
+        <select
+          id="plotDimensions"
+          name="plotDimensions"
+          [(ngModel)]="formData.plotDimensions"
+          required
+        >
+          <option value="">Select plot size range</option>
+          <option value="2000-2500 sqft">2000 - 2500 sqft</option>
+          <option value="1500-2000 sqft">1500 - 2000 sqft</option>
+          <option value="1000-1500 sqft">1000 - 1500 sqft</option>
+          <!-- Add more options as needed, listed in descending order -->
+        </select>
+      </div>
+      <mat-error
+        *ngIf="
+          requirementsForm.form.controls['plotDimensions'].invalid &&
+          requirementsForm.form.controls['plotDimensions'].touched
+        "
+      >
+        Plot Size Range is required.
+      </mat-error>
+
+      <div class="form-group">
+        <label for="area">Area:</label>
+        <select id="area" name="area" [(ngModel)]="formData.area" required>
+          <option value="">Select an area</option>
+          <option value="Ramanagara">Ramanagara</option>
+          <option value="Magadi">Magadi</option>
+          <option value="Channapatna">Channapatna</option>
+          <option value="Kanakapura">Kanakapura</option>
+          <!-- Add more options for other places in Ramanagara as needed -->
+        </select>
+      </div>
+      <mat-error
+        *ngIf="
+          requirementsForm.form.controls['area'].invalid &&
+          requirementsForm.form.controls['area'].touched
+        "
+      >
+        Area is required.
+      </mat-error>
+
+      <div class="form-group">
+        <label for="priceRange">Price Range (in rupees):</label>
+        <select
+          id="priceRange"
+          name="priceRange"
+          [(ngModel)]="formData.priceRange"
+          required
+        >
+          <option value="">Select a price range</option>
+          <option value="₹180,000 - ₹250,000">₹180,000 - ₹250,000</option>
+          <option value="₹120,000 - ₹180,000">₹120,000 - ₹180,000</option>
+          <option value="₹80,000 - ₹120,000">₹80,000 - ₹120,000</option>
+          <!-- Add more options as needed and list them in descending order -->
+        </select>
+      </div>
+      <mat-error
+        *ngIf="
+          requirementsForm.form.controls['priceRange'].invalid &&
+          requirementsForm.form.controls['priceRange'].touched
+        "
+      >
+        Price Range is required.
+      </mat-error>
+
+      <div class="submit-container">
+        <button type="submit" [disabled]="!requirementsForm.valid">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

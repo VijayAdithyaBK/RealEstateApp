@@ -1,0 +1,20 @@
+<!-- real-estate-listings.component.html -->
+<div class="listings-container">
+  <div
+    class="listing-card"
+    *ngFor="let estate of filteredRealEstates"
+    (click)="viewListing(estate.id)"
+  >
+    <img [src]="estate.imageUrls[0]" alt="Property Image" />
+    <div class="listing-details">
+      <p><strong>Area:</strong> {{ estate.area }}</p>
+      <p><strong>Plot Size:</strong> {{ estate.plotSize }}</p>
+      <p><strong>Price Range:</strong> {{ estate.priceRange }}</p>
+    </div>
+  </div>
+
+  <!-- Floating Home Button -->
+  <button mat-fab class="home-button" (click)="goToWelcome()">
+    <mat-icon>home</mat-icon>
+  </button>
+</div>

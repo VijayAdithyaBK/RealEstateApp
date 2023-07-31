@@ -1,0 +1,31 @@
+<div class="container" *ngIf="realEstate">
+  <!-- Image Carousel -->
+  <owl-carousel-o
+    *ngIf="realEstate?.imageUrls && realEstate.imageUrls.length > 0"
+    [options]="carouselOptions"
+  >
+    <ng-container *ngFor="let imageUrl of realEstate?.imageUrls">
+      <ng-container *owlCarouselItem>
+        <img class="carousel-image" [src]="imageUrl" alt="Real Estate Image" />
+      </ng-container>
+    </ng-container>
+  </owl-carousel-o>
+
+  <!-- Real Estate Details -->
+  <div class="details-container">
+    <h2 class="area">{{ realEstate?.area }}</h2>
+    <p class="plot-size">{{ realEstate?.plotSize }}</p>
+    <p class="price-range">{{ realEstate?.priceRange }}</p>
+
+    <!-- Add any other details you want to display -->
+
+    <!-- Contact Button -->
+    <button mat-raised-button class="contact-button" (click)="goToContact()">
+      Contact
+    </button>
+  </div>
+  <!-- Floating Home Button -->
+  <button mat-fab class="home-button" (click)="goToWelcome()">
+    <mat-icon>home</mat-icon>
+  </button>
+</div>
